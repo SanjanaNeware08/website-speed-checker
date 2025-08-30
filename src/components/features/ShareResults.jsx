@@ -64,16 +64,6 @@ const ShareResults = ({ speedData }) => {
         >
           💾 Download Report
         </button>
-        
-        <button 
-          className="share-button tweet-button"
-          onClick={() => {
-            const text = encodeURIComponent(generateShareText());
-            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
-          }}
-        >
-          🐦 Tweet Results
-        </button>
       </div>
     </div>
   );

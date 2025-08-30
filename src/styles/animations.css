@@ -85,19 +85,19 @@
 .stagger-5 { animation-delay: 0.5s; }
 
 /* Shimmer effect for loading states */
-@keyframes shimmer {
+/* @keyframes shimmer {
   0% { background-position: -468px 0; }
   100% { background-position: 468px 0; }
-}
+} */
 
-.shimmer {
+/* .shimmer {
   background: linear-gradient(90deg, 
     rgba(255, 255, 255, 0.02) 0%, 
     rgba(255, 255, 255, 0.08) 50%, 
     rgba(255, 255, 255, 0.02) 100%);
   background-size: 800px 104px;
   animation: shimmer 1.5s infinite linear;
-}
+} */
 
 /* Typewriter effect */
 @keyframes typewriter {

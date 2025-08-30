@@ -6,7 +6,6 @@
     padding: var(--spacing-2xl);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
   }
@@ -20,13 +19,11 @@
     height: 1px;
     background: var(--primary-gradient);
     opacity: 0;
-    transition: opacity var(--transition-normal);
   }
   
   .metric-card:hover {
     border-color: var(--border-hover);
     background: var(--bg-card-hover);
-    transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
   }
   
@@ -70,30 +67,9 @@
     justify-content: center;
     position: relative;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-    transition: all var(--transition-normal);
   }
   
-  .score-circle::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    padding: 2px;
-    background: inherit;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: subtract;
-    -webkit-mask-composite: subtract;
-    animation: scoreRotate 3s linear infinite;
-  }
-  
-  @keyframes scoreRotate {
-    to { transform: rotate(360deg); }
-  }
-  
-  .metric-card:hover .score-circle {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
-  }
+ 
   
   .score-number {
     font-size: 1.8rem;
@@ -127,13 +103,11 @@
     background: rgba(255, 255, 255, 0.02);
     border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all var(--transition-fast);
   }
   
   .metric-item:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
   }
   
   .metric-label {

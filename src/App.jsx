@@ -10,7 +10,6 @@ import Results from './components/Results';
 import Footer from './components/Footer';
 
 // Feature Components
-import ComparisonChart from './components/features/ComparisonChart';
 import TestHistory from './components/features/TestHistory';
 import ShareResults from './components/features/ShareResults';
 
@@ -71,7 +70,6 @@ function App() {
         {speedData && (
           <>
             <Results speedData={speedData} />
-            <ComparisonChart speedData={speedData} />
             <ShareResults speedData={speedData} />
           </>
         )}
