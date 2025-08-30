@@ -1,0 +1,46 @@
+/* styles/components/footer.css */
+.footer {
+    text-align: center;
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-2xl) 0;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+  }
+  
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: var(--primary-gradient);
+  }
+  
+  .footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 400;
+  }
+  
+  .footer p:first-child {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  
+  .footer-note {
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  
+  /* Hover effect */
+  .footer:hover {
+    color: var(--text-secondary);
+  }
+  
+  .footer:hover::before {
+    width: 200px;
+    transition: width var(--transition-slow);
+  }

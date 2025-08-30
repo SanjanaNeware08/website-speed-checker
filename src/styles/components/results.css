@@ -1,0 +1,170 @@
+/* styles/components/results.css */
+.results {
+    animation: resultsSlideIn 0.6s ease-out;
+  }
+  
+  @keyframes resultsSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .results-title {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--text-primary);
+    position: relative;
+    padding-bottom: var(--spacing-lg);
+  }
+  
+  .results-title::before {
+    content: '📊';
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+  
+  .results-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-lg);
+  }
+  
+  .performance-tips {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    margin-top: var(--spacing-3xl);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .performance-tips::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--secondary-gradient);
+    opacity: 0.7;
+  }
+  
+  .performance-tips h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .performance-tips ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .performance-tips li {
+    position: relative;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--accent-gradient);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all var(--transition-normal);
+  }
+  
+  .performance-tips li::before {
+    content: '✨';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--bg-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    border: 2px solid var(--border-color);
+  }
+  
+  .performance-tips li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(10px);
+    color: var(--text-primary);
+  }
+  
+  .performance-tips li:hover::before {
+    background: var(--accent-gradient);
+    border-color: transparent;
+    animation: tipsPulse 0.6s ease-out;
+  }
+  
+  @keyframes tipsPulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.2); }
+    100% { transform: translateY(-50%) scale(1); }
+  }
+  
+  /* Staggered animation for tips */
+  .performance-tips li:nth-child(1) { animation-delay: 0.1s; }
+  .performance-tips li:nth-child(2) { animation-delay: 0.2s; }
+  .performance-tips li:nth-child(3) { animation-delay: 0.3s; }
+  .performance-tips li:nth-child(4) { animation-delay: 0.4s; }
+  .performance-tips li:nth-child(5) { animation-delay: 0.5s; }
+  .performance-tips li:nth-child(6) { animation-delay: 0.6s; }
+  .performance-tips li:nth-child(7) { animation-delay: 0.7s; }
+  .performance-tips li:nth-child(8) { animation-delay: 0.8s; }
+  
+  @media (max-width: 768px) {
+    .performance-tips ul {
+      grid-template-columns: 1fr;
+    }
+    
+    .performance-tips li {
+      margin-left: var(--spacing-lg);
+    }
+    
+    .performance-tips li::before {
+      left: -20px;
+    }
+  }
